@@ -2,12 +2,23 @@ import pytest
 from selenium import webdriver
 
 # Application URL
-BASE_URL = ''
+BASE_URL = 'https://ecommerce-playground.lambdatest.io/'
 
 
 @pytest.fixture(scope="class")
-def driver_setup(request):
-    driver = webdriver.Chrome('../driver/chromedriver.exe')
+def chrome_driver_setup(request):
+    driver = webdriver.Chrome()
+    request.cls.driver = driver
+    driver.get(BASE_URL)
+    driver.maximize_window()
+
+    yield driver
+
+    driver.close()
+
+@pytest.fixture(scope="class")
+def firefox_driver_setup(request):
+    driver = webdriver.Firefox()
     request.cls.driver = driver
     driver.get(BASE_URL)
     driver.maximize_window()
