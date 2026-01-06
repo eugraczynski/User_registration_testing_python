@@ -1,13 +1,10 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from utils.tools import presence_wait, assertion
+from utils.tools import GlobalUtilities 
+from page.basepage.mainpage import LocatorsBasePage
 import pytest
 
 
-class LocatorsBasePage:
-    SEARCH_FIELD = (By.ID, 'searchs')
-    CART_BUTTON = (By.ID, 'entry_217825')
 
 @pytest.mark.usefixtures("chrome_driver_setup")
 class TestBasePage:
@@ -22,14 +19,14 @@ class TestBasePage:
 
 
 @pytest.mark.usefixtures("chrome_driver_setup")
-class TestVariousElements(LocatorsBasePage):
+class TestVariousElements():
     def test_search_field_presence(self):
-        search_field = presence_wait(self.driver, self.SEARCH_FIELD)
-        # assert search_field.is_displayed(), 'Search field is not displayed on the main page'
+        GlobalUtilities.presence_wait(self.driver, LocatorsBasePage.SEARCH_FIELD)
 
     def test_cart_button_presence(self):
-        cart_button = presence_wait(self.driver, self.CART_BUTTON)
-        # assert cart_button.is_displayed(), 'Cart button is not displayed on the main page'
+        GlobalUtilities.presence_wait(self.driver, LocatorsBasePage.CART_BUTTON)
+
+
 
 @pytest.mark.usefixtures("chrome_driver_setup")
 class TestFailBasePage:

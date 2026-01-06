@@ -7,7 +7,7 @@ BASE_URL = 'https://ecommerce-playground.lambdatest.io/'
 
 @pytest.fixture(scope="class")
 def chrome_driver_setup(request):
-    driver = webdriver.Chrome() # can be initialized with path to other chromedriver if needed
+    driver = webdriver.Chrome()
     request.cls.driver = driver
     driver.implicitly_wait(2)
     driver.get(BASE_URL)
