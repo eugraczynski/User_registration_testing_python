@@ -18,8 +18,8 @@ class TestBasePage:
         assert expected_title == actual_title, f'\nError: Actual title and expected title are different'
 
 
-@pytest.mark.usefixtures("chrome_driver_setup")
-class TestVariousElements():
+@pytest.mark.usefixtures("chrome_driver_setup", "firefox_driver_setup")
+class TestVariousElements:
     def test_search_field_presence(self):
         GlobalUtilities.presence_wait(self.driver, LocatorsBasePage.SEARCH_FIELD)
 

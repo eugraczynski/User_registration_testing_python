@@ -17,7 +17,7 @@ def chrome_driver_setup(request):
 
     driver.close()
 
-@pytest.fixture(scope="class")
+@pytest.fixture()
 def firefox_driver_setup(request):
     driver = webdriver.Firefox()
     request.cls.driver = driver
