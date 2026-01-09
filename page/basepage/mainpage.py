@@ -5,6 +5,5 @@ class LocatorsBasePage:
     CART_BUTTON = (By.ID, 'entry_217825')
 
 class LocatorsNavBar:
-    NAV_BAR = (By.ID, 'widget-navbar-217834')
-    My_ACCOUNT_DROPDOWN = (By.XPATH, "//span[text()='My Account']")
-    LOGIN_OPTION = (By.LINK_TEXT, 'Login')
+    My_ACCOUNT_DROPDOWN = (By.CSS_SELECTOR, "a[@title='My Account']")
+    LOGIN_OPTION = (By.ID, "a[href='https://ecommerce-playground.lambdatest.io/index.php?route=account/login']")
