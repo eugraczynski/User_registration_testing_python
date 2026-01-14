@@ -36,11 +36,11 @@ class TestVariousElements:
     def test_my_account_dropdown_presence(self):
         GlobalUtilities.presence_wait(self.driver, LocatorsNavBar.My_ACCOUNT_DROPDOWN)
     
-    # def test_actions_chain_example(self):
-    #     account_dropdown = self.driver.find_element(*LocatorsNavBar.My_ACCOUNT_DROPDOWN)
-    #     actions = ActionChains(self.driver)
-    #     actions.move_to_element(account_dropdown).click().perform()
-    #     time.sleep(2)  # Just for demonstration purposes; avoid using sleep in real tests
+    def test_actions_chain_example(self):
+        account_dropdown = self.driver.find_element(*LocatorsNavBar.My_ACCOUNT_DROPDOWN)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(account_dropdown).perform()
+        time.sleep(2)  # Just for demonstration purposes; avoid using sleep in real tests
 # //div[contains(@class, 'Title')][text()='Last']/following-sibling::div//input[@class='number-input']
 # contains szuka osobno kazda czesc tekstu
 
