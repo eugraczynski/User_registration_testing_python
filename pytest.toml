@@ -1,2 +1,5 @@
 [pytest]
-pythonpath = ["test"]
+pythonpath = ["tests"]
+
+[tool.pytest.ini_options]
+markers = ["marked_as"]

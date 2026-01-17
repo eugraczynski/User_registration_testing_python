@@ -3,6 +3,15 @@ from utils.tools import presence_wait, try_assertion, password_randomizer, field
 import random
 from dataclasses import dataclass
 
+
+# from pathlib import Path
+# import sys
+
+# sys.path.append(str(Path(__file__).parent))
+
+# print((Path(__file__).parent.parent))
+
+
 # Profile URL
 PROFILE_URL = ''
 
